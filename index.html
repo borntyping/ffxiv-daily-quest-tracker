@@ -48,15 +48,7 @@
                 <strong x-text="expansion.name"></strong>
               </td>
               <td></td>
-              <td class="text-nowrap">
-                <div x-show="expansion.started()">
-                  <div class="d-flex justify-content-start">
-                    <span class="mx-1" title="Points to next rank"><template x-for="tribe in expansion.progressingTribes()"><img alt="" height="21" src="" width="21" x-bind:src="tribe.icon()"></template> <span x-text="expansion.pointsToNextRank()"></span></span>
-                    <span class="mx-1" title="Quests to next rank"><img alt="quests" height="21" src="img/sidequest.png"> <span x-text="expansion.questsToNextRank()"></span></span>
-                    <span class="mx-1" title="Days to next rank"><img alt="quests" height="21" src="img/guildhest.png"> <span x-text="expansion.daysToNextRank()"></span></span>
-                  </div>
-                </div>
-              </td>
+              <td></td>
               <td class="text-nowrap">
                 <div x-show="expansion.started()">
                   <div class="d-flex justify-content-start">
