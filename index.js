@@ -164,6 +164,10 @@ class Expansion {
         return this.tribes.filter((t) => t.pointsToNextRank() > 0);
     }
 
+    maxQuestsPerDay() {
+        return Math.min(this.progressingTribes().length * 3, 12);
+    }
+
     unlockedTribes() {
         return this.tribes.filter((t) => t.reputation.tier);
     }
@@ -177,7 +181,7 @@ class Expansion {
     }
 
     daysToNextRank() {
-        return this.unlockedTribes().reduce((x, y) => x + y.daysToNextRank(), 0);
+        return Math.ceil(this.questsToNextRank() / this.maxQuestsPerDay());
     }
 
     pointsToMaxRank() {
@@ -189,7 +193,7 @@ class Expansion {
     }
 
     daysToMaxRank() {
-        return this.unlockedTribes().reduce((x, y) => x + y.daysToMaxRank(), 0);
+        return Math.ceil(this.questsToMaxRank() / this.maxQuestsPerDay());
     }
 }
 
