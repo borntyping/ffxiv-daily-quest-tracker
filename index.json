@@ -1,0 +1,730 @@
+{
+  "expansions": [
+    {
+      "name": "A Realm Reborn",
+      "tribes": [
+        {
+          "name": "Amalj'aa",
+          "expansion": "A Realm Reborn",
+          "ranks": [
+            {
+              "name": "Neutral",
+              "tier": 1,
+              "maxPoints": 150,
+              "questPoints": 10
+            },
+            {
+              "name": "Recognized",
+              "tier": 2,
+              "maxPoints": 360,
+              "questPoints": 14
+            },
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 20
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "progressionAllied": true,
+              "maxPoints": 0,
+              "questPoints": 0
+            },
+            {
+              "name": "Allied",
+              "tier": 8,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Sylph",
+          "expansion": "A Realm Reborn",
+          "ranks": [
+            {
+              "name": "Neutral",
+              "tier": 1,
+              "maxPoints": 150,
+              "questPoints": 10
+            },
+            {
+              "name": "Recognized",
+              "tier": 2,
+              "maxPoints": 360,
+              "questPoints": 14
+            },
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 20
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "progressionAllied": true,
+              "maxPoints": 0,
+              "questPoints": 0
+            },
+            {
+              "name": "Allied",
+              "tier": 8,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Kobold",
+          "expansion": "A Realm Reborn",
+          "ranks": [
+            {
+              "name": "Neutral",
+              "tier": 1,
+              "maxPoints": 150,
+              "questPoints": 10
+            },
+            {
+              "name": "Recognized",
+              "tier": 2,
+              "maxPoints": 360,
+              "questPoints": 14
+            },
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 20
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "progressionAllied": true,
+              "maxPoints": 0,
+              "questPoints": 0
+            },
+            {
+              "name": "Allied",
+              "tier": 8,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Sahagin",
+          "expansion": "A Realm Reborn",
+          "ranks": [
+            {
+              "name": "Neutral",
+              "tier": 1,
+              "maxPoints": 150,
+              "questPoints": 10
+            },
+            {
+              "name": "Recognized",
+              "tier": 2,
+              "maxPoints": 360,
+              "questPoints": 14
+            },
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 20
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "progressionAllied": true,
+              "maxPoints": 0,
+              "questPoints": 0
+            },
+            {
+              "name": "Allied",
+              "tier": 8,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Ixal",
+          "expansion": "A Realm Reborn",
+          "ranks": [
+            {
+              "name": "Neutral",
+              "tier": 1,
+              "maxPoints": 150,
+              "questPoints": 20
+            },
+            {
+              "name": "Recognized",
+              "tier": 2,
+              "maxPoints": 360,
+              "questPoints": 24
+            },
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 29
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "maxPoints": 720,
+              "questPoints": 35
+            },
+            {
+              "name": "Respected",
+              "tier": 5,
+              "maxPoints": 990,
+              "questPoints": 42
+            },
+            {
+              "name": "Honored",
+              "tier": 6,
+              "maxPoints": 1320,
+              "questPoints": 50
+            },
+            {
+              "name": "Sworn",
+              "tier": 7,
+              "progressionAllied": true,
+              "maxPoints": 0,
+              "questPoints": 0
+            },
+            {
+              "name": "Allied",
+              "tier": 8,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavensward",
+      "tribes": [
+        {
+          "name": "Vanu Vanu",
+          "expansion": "Heavensward",
+          "ranks": [
+            {
+              "name": "Neutral",
+              "tier": 1,
+              "maxPoints": 150,
+              "questPoints": 50
+            },
+            {
+              "name": "Recognized",
+              "tier": 2,
+              "maxPoints": 360,
+              "questPoints": 50
+            },
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 50
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "maxPoints": 720,
+              "questPoints": 50
+            },
+            {
+              "name": "Respected",
+              "tier": 5,
+              "maxPoints": 990,
+              "questPoints": 50
+            },
+            {
+              "name": "Honored",
+              "tier": 6,
+              "maxPoints": 1320,
+              "questPoints": 50
+            },
+            {
+              "name": "Sworn",
+              "tier": 7,
+              "maxPoints": 1730,
+              "questPoints": 50
+            },
+            {
+              "name": "Bloodsworn",
+              "tier": 8,
+              "progressionAllied": true,
+              "maxPoints": 0,
+              "questPoints": 0
+            },
+            {
+              "name": "Allied",
+              "tier": 9,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Vath",
+          "expansion": "Heavensward",
+          "ranks": [
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 70
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "maxPoints": 720,
+              "questPoints": 70
+            },
+            {
+              "name": "Respected",
+              "tier": 5,
+              "maxPoints": 990,
+              "questPoints": 70
+            },
+            {
+              "name": "Honored",
+              "tier": 6,
+              "maxPoints": 1320,
+              "questPoints": 70
+            },
+            {
+              "name": "Sworn",
+              "tier": 7,
+              "maxPoints": 1730,
+              "questPoints": 70
+            },
+            {
+              "name": "Bloodsworn",
+              "tier": 8,
+              "progressionAllied": true,
+              "maxPoints": 0,
+              "questPoints": 0
+            },
+            {
+              "name": "Allied",
+              "tier": 9,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Moogle",
+          "expansion": "Heavensward",
+          "ranks": [
+            {
+              "name": "Neutral",
+              "tier": 1,
+              "maxPoints": 150,
+              "questPoints": 50
+            },
+            {
+              "name": "Recognized",
+              "tier": 2,
+              "maxPoints": 360,
+              "questPoints": 50
+            },
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 50
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "maxPoints": 720,
+              "questPoints": 50
+            },
+            {
+              "name": "Respected",
+              "tier": 5,
+              "maxPoints": 990,
+              "questPoints": 50
+            },
+            {
+              "name": "Honored",
+              "tier": 6,
+              "maxPoints": 1320,
+              "questPoints": 50
+            },
+            {
+              "name": "Sworn",
+              "tier": 7,
+              "maxPoints": 1730,
+              "questPoints": 50
+            },
+            {
+              "name": "Bloodsworn",
+              "tier": 8,
+              "progressionAllied": true,
+              "maxPoints": 0,
+              "questPoints": 0
+            },
+            {
+              "name": "Allied",
+              "tier": 9,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stormblood",
+      "tribes": [
+        {
+          "name": "Kojin",
+          "expansion": "Stormblood",
+          "ranks": [
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 60
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "maxPoints": 720,
+              "questPoints": 60
+            },
+            {
+              "name": "Respected",
+              "tier": 5,
+              "maxPoints": 990,
+              "questPoints": 60
+            },
+            {
+              "name": "Honored",
+              "tier": 6,
+              "maxPoints": 1320,
+              "questPoints": 60
+            },
+            {
+              "name": "Sworn",
+              "tier": 7,
+              "maxPoints": 1730,
+              "questPoints": 60
+            },
+            {
+              "name": "Bloodsworn",
+              "tier": 8,
+              "progressionAllied": true,
+              "maxPoints": 0,
+              "questPoints": 0
+            },
+            {
+              "name": "Allied",
+              "tier": 9,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Ananta",
+          "expansion": "Stormblood",
+          "ranks": [
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 60
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "maxPoints": 720,
+              "questPoints": 60
+            },
+            {
+              "name": "Respected",
+              "tier": 5,
+              "maxPoints": 990,
+              "questPoints": 60
+            },
+            {
+              "name": "Honored",
+              "tier": 6,
+              "maxPoints": 1320,
+              "questPoints": 60
+            },
+            {
+              "name": "Sworn",
+              "tier": 7,
+              "maxPoints": 1730,
+              "questPoints": 60
+            },
+            {
+              "name": "Bloodsworn",
+              "tier": 8,
+              "progressionAllied": true,
+              "maxPoints": 0,
+              "questPoints": 0
+            },
+            {
+              "name": "Allied",
+              "tier": 9,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Namazu",
+          "expansion": "Stormblood",
+          "ranks": [
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 60
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "maxPoints": 720,
+              "questPoints": 60
+            },
+            {
+              "name": "Respected",
+              "tier": 5,
+              "maxPoints": 990,
+              "questPoints": 60
+            },
+            {
+              "name": "Honored",
+              "tier": 6,
+              "maxPoints": 1320,
+              "questPoints": 60
+            },
+            {
+              "name": "Sworn",
+              "tier": 7,
+              "maxPoints": 1730,
+              "questPoints": 60
+            },
+            {
+              "name": "Bloodsworn",
+              "tier": 8,
+              "progressionAllied": true,
+              "maxPoints": 0,
+              "questPoints": 0
+            },
+            {
+              "name": "Allied",
+              "tier": 9,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shadowbringers",
+      "tribes": [
+        {
+          "name": "Pixie",
+          "expansion": "Shadowbringers",
+          "ranks": [
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 60
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "maxPoints": 720,
+              "questPoints": 60
+            },
+            {
+              "name": "Respected",
+              "tier": 5,
+              "maxPoints": 990,
+              "questPoints": 60
+            },
+            {
+              "name": "Honored",
+              "tier": 6,
+              "maxPoints": 1320,
+              "questPoints": 60
+            },
+            {
+              "name": "Bloodsworn",
+              "tier": 8,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Qitari",
+          "expansion": "Shadowbringers",
+          "ranks": [
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 60
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "maxPoints": 720,
+              "questPoints": 60
+            },
+            {
+              "name": "Respected",
+              "tier": 5,
+              "maxPoints": 990,
+              "questPoints": 60
+            },
+            {
+              "name": "Honored",
+              "tier": 6,
+              "maxPoints": 1320,
+              "questPoints": 60
+            },
+            {
+              "name": "Bloodsworn",
+              "tier": 8,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Dwarf",
+          "expansion": "Shadowbringers",
+          "ranks": [
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 60
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "maxPoints": 720,
+              "questPoints": 60
+            },
+            {
+              "name": "Respected",
+              "tier": 5,
+              "maxPoints": 990,
+              "questPoints": 60
+            },
+            {
+              "name": "Honored",
+              "tier": 6,
+              "maxPoints": 1320,
+              "questPoints": 60
+            },
+            {
+              "name": "Bloodsworn",
+              "tier": 8,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Endwalker",
+      "tribes": [
+        {
+          "name": "Arkasodara",
+          "expansion": "Endwalker",
+          "ranks": [
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 60
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "maxPoints": 720,
+              "questPoints": 60
+            },
+            {
+              "name": "Respected",
+              "tier": 5,
+              "maxPoints": 990,
+              "questPoints": 60
+            },
+            {
+              "name": "Honored",
+              "tier": 6,
+              "maxPoints": 1320,
+              "questPoints": 60
+            },
+            {
+              "name": "Bloodsworn",
+              "tier": 8,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Omicron",
+          "expansion": "Endwalker",
+          "ranks": [
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 60
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "maxPoints": 720,
+              "questPoints": 60
+            },
+            {
+              "name": "Respected",
+              "tier": 5,
+              "maxPoints": 990,
+              "questPoints": 60
+            },
+            {
+              "name": "Honored",
+              "tier": 6,
+              "maxPoints": 1320,
+              "questPoints": 60
+            },
+            {
+              "name": "Bloodsworn",
+              "tier": 8,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

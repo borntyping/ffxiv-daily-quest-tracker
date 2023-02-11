@@ -1,3 +1,54 @@
+class Reputation {
+    expansion;
+    tribe;
+
+    constructor({expansion, tribe}) {
+        this.expansion = expansion;
+        this.tribe = tribe;
+    }
+
+    getState() {
+        const item = window.localStorage.getItem('reputation');
+        return item !== null ? JSON.parse(item) : {};
+    }
+
+    setState(state) {
+        window.localStorage.setItem('reputation', JSON.stringify(state))
+    }
+
+    get tier() {
+        const state = this.getState();
+        return state[this.expansion]?.[this.tribe]?.tier || null;
+    }
+
+    set tier(value) {
+        const state = this.getState();
+
+        state[this.expansion] ??= {};
+        state[this.expansion][this.tribe] ??= {};
+        state[this.expansion][this.tribe].tier = value;
+
+        this.setState(state);
+        return value;
+    }
+
+    get points() {
+        const state = this.getState();
+        return state[this.expansion]?.[this.tribe]?.points || 0;
+    }
+
+    set points(value) {
+        const state = this.getState();
+
+        state[this.expansion] ??= {};
+        state[this.expansion][this.tribe] ??= {};
+        state[this.expansion][this.tribe].points = value;
+
+        this.setState(state);
+        return value;
+    }
+}
+
 class Rank {
     tier;
     name;
@@ -15,87 +66,81 @@ class Rank {
 }
 
 class Tribe {
-    constructor({name, expansion, reputationStore, reputationRanks}) {
+    constructor({name, expansion, ranks, reputation}) {
         this.name = name;
         this.expansion = expansion;
-        this.reputationStore = reputationStore;
-        this.reputationRanks = reputationRanks;
+        this.ranks = ranks;
+        this.reputation = reputation;
     }
 
     icon() {
         return `img/tribes/${this.name}.png`;
     }
 
-    get currentTier() {
-        this.reputationStore[this.name] ||= {};
-        return (this.reputationStore[this.name].tier || 0);
-    }
-
-    set currentTier(value) {
-        this.reputationStore[this.name].tier = value
-    }
-
-    get currentPoints() {
-        this.reputationStore[this.name] ||= {};
-        return (this.reputationStore[this.name].points || 0);
-    }
-
-    set currentPoints(value) {
-        this.reputationStore[this.name].points = value
-    }
 
     /**
      * The current reputation rank the player has achieved.
      * @returns Rank
      */
-    get currentReputationRank() {
-        return this.reputationRanks[this.currentTier];
+    get rank() {
+        if (this.reputation.tier === null) {
+            return null;
+        }
+
+        const ranksByTier = Object.fromEntries(this.ranks.map((r) => [r.tier, r]))
+
+        return ranksByTier[this.reputation.tier];
     }
 
     progression() {
-        if (this.currentTier === 0) {
+        if (this.reputation.tier == null) {
             return `Unlock ${this.name} daily quests to start. `
         }
 
-        if (this.currentReputationRank.progressionAllied) {
+        if (this.reputation.tier === this.ranks[this.ranks.length - 1].tier) {
+            return `You are allied with the ${this.name}.`;
+        }
+
+        if (this.rank?.progressionAllied) {
             return `Complete <i>${this.expansion}</i> Allied tribal quests to continue.`
         }
 
-        if (this.currentReputationRank.maxPoints === this.currentPoints) {
+        if (this.reputation.points === this.rank?.maxPoints) {
             return `<strong>Complete the next ${this.name} story quest to continue.</strong>`
         }
+
 
         return undefined;
     }
 
+    remainingRanks() {
+        return Object.values(this.ranks).filter((rank) => {
+            return rank.tier >= this.reputation.tier;
+        })
+    }
+
     pointsPerQuest() {
-        return this.currentReputationRank.questPoints;
+        return this.rank?.questPoints;
     }
 
     pointsToNextRank() {
-        return this.currentReputationRank.maxPoints - this.currentPoints;
+        return this.rank?.maxPoints - this.reputation.points;
     }
 
     questsToNextRank() {
-        return Math.ceil(this.pointsToNextRank() / this.pointsPerQuest());
+        return this.rank?.maxPoints ? Math.ceil(this.pointsToNextRank() / this.pointsPerQuest()) : 0;
     }
 
     daysToNextRank() {
         return Math.ceil(this.questsToNextRank() / 3);
     }
 
-    remainingRanks() {
-        return Object.values(this.reputationRanks).filter((rank) => {
-            return rank.tier >= this.currentTier;
-        })
-    }
-
     pointsToMaxRank() {
-        return this.remainingRanks().reduce((x, y) => x + y.maxPoints, -this.currentPoints);
+        return this.remainingRanks().reduce((x, y) => x + y.maxPoints, -this.reputation.points);
     }
 
     questsToMaxRank() {
-        return Math.ceil(this.pointsToMaxRank() / this.pointsPerQuest());
+        return this.rank?.maxPoints ? Math.ceil(this.pointsToMaxRank() / this.pointsPerQuest()) : 0;
     }
 
     daysToMaxRank() {
@@ -103,33 +148,79 @@ class Tribe {
     }
 }
 
-document.addEventListener('alpine:init', async () => {
-    console.log('Running alpine:init hook');
+class Expansion {
+    tribes;
 
-    Alpine.store('tribes', []);
-    const request = new Request('tribes.json');
+    constructor({name, tribes}) {
+        this.name = name;
+        this.tribes = tribes;
+    }
+
+    started() {
+        return this.unlockedTribes().length > 0;
+    }
+
+    progressingTribes() {
+        return this.tribes.filter((t) => t.pointsToNextRank() > 0);
+    }
+
+    unlockedTribes() {
+        return this.tribes.filter((t) => t.reputation.tier);
+    }
+
+    pointsToNextRank() {
+        return this.unlockedTribes().reduce((x, y) => x + y.pointsToNextRank(), 0);
+    }
+
+    questsToNextRank() {
+        return this.unlockedTribes().reduce((x, y) => x + y.questsToNextRank(), 0);
+    }
+
+    daysToNextRank() {
+        return this.unlockedTribes().reduce((x, y) => x + y.daysToNextRank(), 0);
+    }
+
+    pointsToMaxRank() {
+        return this.unlockedTribes().reduce((x, y) => x + y.pointsToMaxRank(), 0);
+    }
+
+    questsToMaxRank() {
+        return this.unlockedTribes().reduce((x, y) => x + y.questsToMaxRank(), 0);
+    }
+
+    daysToMaxRank() {
+        return this.unlockedTribes().reduce((x, y) => x + y.daysToMaxRank(), 0);
+    }
+}
+
+document.addEventListener('alpine:init', async () => {
+    console.info('Running alpine:init hook');
+    Alpine.store('expansions', []);
+
+    console.debug('Fetching JSON data');
+    const request = new Request('index.json');
     const response = await fetch(request);
     const data = await response.json();
+    console.debug('Fetched JSON data');
 
-    console.log('Fetched JSON data');
+    Alpine.store('expansions', data['expansions'].map((expansion) => {
+        console.debug(`Creating Expansion for ${expansion.name}`)
 
-    const reputationStore = Alpine.$persist({}).as('reputation');
-
-    console.log('reputationStore', reputationStore);
-
-    Alpine.store('tribes', data['tribes'].map((item) => {
-        const reputationRanks = Object.fromEntries(item['ranks'].map((r) => {
-            return [r.tier, new Rank(r)];
-
-        }));
-
-        return new Tribe({
-            name: item.name,
-            expansion: item.expansion,
-            reputationStore: reputationStore,
-            reputationRanks: reputationRanks,
-        });
+        return new Expansion({
+            name: expansion.name,
+            tribes: expansion.tribes.map((tribe) => {
+                console.debug(`Creating Tribe for ${expansion.name} → ${tribe.name}`)
+                return new Tribe({
+                    name: tribe.name,
+                    expansion: expansion.name,
+                    ranks: tribe['ranks'].map((rank) => {
+                        return new Rank(rank);
+                    }),
+                    reputation: new Reputation({expansion: expansion.name, tribe: tribe.name}),
+                });
+            })
+        })
     }));
 
-    console.log('Completed alpine:init hook');
+    console.info('Completed alpine:init hook');
 });
