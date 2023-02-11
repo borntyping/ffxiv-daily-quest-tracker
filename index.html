@@ -7,6 +7,7 @@
   <title>FFXIV Daily Quest Tracker</title>
   <link href="img/beast-tribe-quests.png" rel="icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" crossorigin="anonymous" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script crossorigin="anonymous" defer integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -21,7 +22,7 @@
 </nav>
 
 <div class="container">
-  <table class="table" x-data="{ $store: { tribes: [] }}">
+  <table class="table" x-data>
     <thead>
     <tr>
       <th rowspan="2">Tribe</th>
@@ -44,7 +45,7 @@
     <template :key="tribe.name" x-for="tribe in $store.tribes">
       <tr x-data="{ currentRank: tribe.reputationRanks[tribe.reputation.tier] }">
         <td>
-          <img alt="" height="21" src="" width="21" x-bind:src="tribe.icon()">
+          <img alt="" height="42" src="" width="42" x-bind:src="tribe.icon()">
           <strong x-text="tribe.name"></strong>
         </td>
         <td>
@@ -62,8 +63,8 @@
           <input class="form-control form-control-sm" size="4" type="number" x-model.number="tribe.reputation.points">
         </td>
         <template x-if="tribe.progression()">
-          <td class="text-muted" colspan="6">
-            <span x-html="tribe.progression()"></span>
+          <td colspan="6">
+            <span class="text-muted" x-html="tribe.progression()"></span>
           </td>
         </template>
         <template x-if="!tribe.progression()">
@@ -84,13 +85,6 @@
         <template x-if="!tribe.progression()">
           <td x-text="tribe.daysToMaxRank()"></td>
         </template>
-
-        <!-- Points to next rank -->
-        <!-- Quests to next rank -->
-        <!-- Days to next rank -->
-        <!-- Points to max rank -->
-        <!-- Quests to max rank -->
-        <!-- Days to max rank -->
       </tr>
     </template>
     </tbody>
