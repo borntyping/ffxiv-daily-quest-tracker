@@ -43,24 +43,26 @@
     </thead>
     <tbody>
     <template :key="tribe.name" x-for="tribe in $store.tribes">
-      <tr x-data="{ currentRank: tribe.reputationRanks[tribe.reputation.tier] }">
+      <tr>
         <td>
           <img alt="" height="42" src="" width="42" x-bind:src="tribe.icon()">
           <strong x-text="tribe.name"></strong>
+          <code x-text="tribe.currentTier"></code>
+          <code x-text="tribe.currentPoints"></code>
         </td>
         <td>
           <span x-text="tribe.expansion"></span>
         </td>
         <td>
-          <select class="form-select form-select-sm" name="rank" x-model.number="tribe.reputation.tier" x-on:input="tribe.reputation.points = 0">
+          <select class="form-select form-select-sm" name="rank" x-model.number="tribe.currentTier" x-on:input="tribe.currentPoints = 0">
             <option value="0"></option>
             <template x-bind:key="reputationRank.name" x-for="reputationRank in tribe.reputationRanks">
-              <option x-bind:selected="tribe.reputation.tier == reputationRank.tier" x-bind:value="reputationRank.tier" x-text="reputationRank.name"></option>
+              <option x-bind:selected="tribe.currentTier == reputationRank.tier" x-bind:value="reputationRank.tier" x-text="reputationRank.name"></option>
             </template>
           </select>
         </td>
         <td>
-          <input class="form-control form-control-sm" size="4" type="number" x-model.number="tribe.reputation.points">
+          <input class="form-control form-control-sm" size="4" type="number" x-model.number="tribe.currentPoints">
         </td>
         <template x-if="tribe.progression()">
           <td colspan="6">
