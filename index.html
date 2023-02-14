@@ -113,17 +113,44 @@
                   <span class="text-muted text-nowrap" x-html="tribe.progression()">xxx</span>
                 </td>
                 <td class="text-nowrap" x-show="!tribe.progression()">
-                  <div class="d-flex justify-content-start">
-                    <span class="mx-1" title="Points to next rank"><img alt="" height="21" src="" width="21" x-bind:src="tribe.icon()"> <span x-text="tribe.pointsToNextRank()"></span></span>
-                    <span class="mx-1" title="Quests to next rank"><img alt="quests" height="21" src="img/sidequest.png"> <span x-text="tribe.questsToNextRank()"></span></span>
-                    <span class="mx-1" title="Days to next rank"><img alt="quests" height="21" src="img/guildhest.png"> <span x-text="tribe.daysToNextRank()"></span></span>
+                  <div class="d-flex justify-content-center">
+                    <span class="ms-1" title="Points to next rank">
+                      <img alt="" height="21" src="" width="21" x-bind:src="tribe.icon()">
+                      <span x-text="tribe.pointsToNextRank()"></span>
+                    </span>
+
+                    <span class="mx-1" title="Points per quest">
+                      (<span x-text="tribe.rank.questPoints"></span>)
+                    </span>
+
+                    <span class="mx-1" title="Quests to next rank">
+                      <img alt="quests" height="21" src="img/sidequest.png">
+                      <span x-text="tribe.questsToNextRank()"></span>
+                    </span>
+
+                    <span class="mx-1" title="Days to next rank">
+                      <img alt="quests" height="21" src="img/guildhest.png">
+                      <span x-text="tribe.daysToNextRank()"></span>
+                    </span>
                   </div>
                 </td>
                 <td class="text-nowrap" x-show="!tribe.progression()">
-                  <div class="d-flex justify-content-start">
-                    <span class="mx-1" title="Points to max rank"><img alt="" height="21" src="" width="21" x-bind:src="tribe.icon()"> <span x-text="tribe.pointsToMaxRank()"></span></span>
-                    <span class="mx-1" title="Quests to max rank"><img alt="quests" height="21" src="img/sidequest.png"> <span x-text="tribe.questsToMaxRank()">></span></span>
-                    <span class="mx-1" title="Days to max rank"><img alt="quests" height="21" src="img/guildhest.png"> <span x-text="tribe.daysToMaxRank()"></span></span>
+                  <div class="d-flex justify-content-center">
+
+                    <span class="mx-1" title="Points to max rank">
+                      <img alt="" height="21" src="" width="21" x-bind:src="tribe.icon()">
+                      <span x-text="tribe.pointsToMaxRank()"></span>
+                    </span>
+
+                    <span class="mx-1" title="Quests to max rank">
+                      <img alt="quests" height="21" src="img/sidequest.png">
+                      <span x-text="tribe.questsToMaxRank()">></span>
+                    </span>
+
+                    <span class="mx-1" title="Days to max rank">
+                      <img alt="quests" height="21" src="img/guildhest.png">
+                      <span x-text="tribe.daysToMaxRank()"></span>
+                    </span>
                   </div>
                 </td>
               </tr>
