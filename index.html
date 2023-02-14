@@ -21,43 +21,50 @@
     </nav>
 
     <div class="container">
-      <table class="table" x-data>
+      <table class="table table-sm" x-data>
         <colgroup>
           <col style="width: 5%;">
           <col style="width: 20%;">
           <col style="width: 25%;">
+
           <col style="width: 25%;">
           <col style="width: 25%;">
         </colgroup>
 
+        <!--        <thead>-->
+        <!--          <tr>-->
+        <!--            <th colspan="2"></th>-->
+        <!--            <th>Reputation</th>-->
+        <!--            <th>To next rank</th>-->
+        <!--            <th>To max rank</th>-->
+        <!--          </tr>-->
+        <!--        </thead>-->
 
-        <thead>
-          <tr>
-            <th colspan="2"></th>
-            <th>Reputation</th>
-            <th>To next rank</th>
-            <th>To max rank</th>
-          </tr>
-        </thead>
-
-        <template :key="expansion.name" x-for="expansion in $store.expansions">
-          <tbody>
+        <template :key="expansion.name" x-for="expansion in $store.game.expansions">
+          <thead>
             <tr>
-              <td></td>
-              <td x-effect="console.log(expansion.name, expansion.started())">
-                <strong x-text="expansion.name"></strong>
-              </td>
-              <td></td>
-              <td></td>
-              <td class="text-nowrap">
-                <div x-show="expansion.started()">
-                  <div class="d-flex justify-content-start">
-                    <span class="mx-1" title="Points to next rank"><template x-for="tribe in expansion.progressingTribes()"><img alt="" height="21" src="" width="21" x-bind:src="tribe.icon()"></template> <span x-text="expansion.pointsToMaxRank()"></span></span>
-                    <span class="mx-1" title="Quests to max rank"><img alt="quests" height="21" src="img/sidequest.png"> <span x-text="expansion.questsToMaxRank()">></span></span>
-                    <span class="mx-1" title="Days to max rank"><img alt="quests" height="21" src="img/guildhest.png"> <span x-text="expansion.daysToMaxRank()"></span></span>
+              <th colspan="5">
+                <div class="text-center">
+                  <div><strong x-text="expansion.name"></strong></div>
+                  <div class="d-flex justify-content-center">
+                    <span class="mx-1" title="Points to complete this expansion">
+                      <template x-for="tribe in expansion.tribesWithPointsRemaining()"><img alt="" height="21" src="" width="21" x-bind:src="tribe.icon()"></template>
+                      <span x-text="expansion.pointsToCompletion()"></span>
+                      points
+                    </span>
+                    <span class="mx-1" title="Quests to complete this expansion">
+                      <img alt="quests" height="21" src="img/sidequest.png">
+                      <span x-text="expansion.questsToCompletion()">></span>
+                      quests
+                    </span>
+                    <span class="mx-1" title="Days to complete this expansion">
+                      <img alt="quests" height="21" src="img/guildhest.png">
+                      <span x-text="expansion.daysToCompletion()"></span>
+                      days
+                    </span>
                   </div>
                 </div>
-              </td>
+              </th>
             </tr>
             <template :key="tribe.name" x-for="tribe in expansion.tribes">
               <tr>
@@ -97,18 +104,44 @@
                 </td>
               </tr>
             </template>
-          </tbody>
+          </thead>
         </template>
+
+        <tfoot>
+          <tr>
+            <td colspan="5">
+              <div class="text-center">
+                <div><strong>All Beast Tribe quests</strong></div>
+                <div class="d-flex justify-content-center">
+                  <span class="mx-1" title="Points to complete all beast tribes">
+                    <span x-text="$store.game.pointsToCompletion()"></span>
+                    points
+                  </span>
+                  <span class="mx-1" title="Quests to complete all beast tribes">
+                    <img alt="quests" height="21" src="img/sidequest.png">
+                    <span x-text="$store.game.questsToCompletion()">></span>
+                    quests
+                  </span>
+                  <span class="mx-1" title="Days to complete all beast tribes">
+                    <img alt="quests" height="21" src="img/guildhest.png">
+                    <span x-text="$store.game.daysToCompletion()"></span>
+                    days
+                  </span>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tfoot>
       </table>
     </div>
 
     <footer class="d-flex justify-content-center text-muted">
-      <div>
-        <div>Icons © SQUARE ENIX CO., LTD. All Rights Reserved.</div>
-        <div>FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.</div>
-        <div>Please see <a href="https://support.na.square-enix.com/rule.php?id=5382&tag=authc">FINAL FANTASY® XIV - Materials Usage License</a> for further information.</div>
+      <div class="mx-5 px-5">
+        <span>Source: <a href="https://github.com/borntyping/ffxiv-daily-quest-tracker">github.com/borntyping/ffxiv-daily-quest-tracker</a>.</span>
+        <span>Icons © SQUARE ENIX CO., LTD. All Rights Reserved.</span>
+        <span>FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.</span>
+        <span>Please see <a href="https://support.na.square-enix.com/rule.php?id=5382&tag=authc">FINAL FANTASY® XIV - Materials Usage License</a> for further information.</span>
       </div>
     </footer>
   </body>
-
 </html>

@@ -5,3 +5,17 @@ td {
 .requirements {
   white-space: nowrap;
 }
+
+
+table td {
+  border-width: 0 !important;
+}
+
+table thead th {
+  /*padding-top: 2em !important;*/
+}
+
+/*table thead tr th {*/
+/*  border-top-width: var(--bs-border-width);*/
+/*  border-bottom-width: var(--bs-border-width);*/
+/*}*/
