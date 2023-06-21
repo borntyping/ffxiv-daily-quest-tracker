@@ -723,6 +723,42 @@
               "questPoints": 0
             }
           ]
+        },
+        {
+          "name": "Loporrit",
+          "expansion": "Endwalker",
+          "ranks": [
+            {
+              "name": "Friendly",
+              "tier": 3,
+              "maxPoints": 510,
+              "questPoints": 60
+            },
+            {
+              "name": "Trusted",
+              "tier": 4,
+              "maxPoints": 720,
+              "questPoints": 60
+            },
+            {
+              "name": "Respected",
+              "tier": 5,
+              "maxPoints": 990,
+              "questPoints": 60
+            },
+            {
+              "name": "Honored",
+              "tier": 6,
+              "maxPoints": 1320,
+              "questPoints": 60
+            },
+            {
+              "name": "Bloodsworn",
+              "tier": 8,
+              "maxPoints": 0,
+              "questPoints": 0
+            }
+          ]
         }
       ]
     }
