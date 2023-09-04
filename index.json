@@ -568,6 +568,12 @@
               "questPoints": 60
             },
             {
+              "name": "Sworn",
+              "tier": 7,
+              "maxPoints": 1730,
+              "questPoints": 60
+            },
+            {
               "name": "Bloodsworn",
               "tier": 8,
               "maxPoints": 0,
@@ -604,6 +610,12 @@
               "questPoints": 60
             },
             {
+              "name": "Sworn",
+              "tier": 7,
+              "maxPoints": 1730,
+              "questPoints": 60
+            },
+            {
               "name": "Bloodsworn",
               "tier": 8,
               "maxPoints": 0,
@@ -637,6 +649,12 @@
               "name": "Honored",
               "tier": 6,
               "maxPoints": 1320,
+              "questPoints": 60
+            },
+            {
+              "name": "Sworn",
+              "tier": 7,
+              "maxPoints": 1730,
               "questPoints": 60
             },
             {
@@ -681,6 +699,12 @@
               "questPoints": 60
             },
             {
+              "name": "Sworn",
+              "tier": 7,
+              "maxPoints": 1730,
+              "questPoints": 60
+            },
+            {
               "name": "Bloodsworn",
               "tier": 8,
               "maxPoints": 0,
@@ -717,6 +741,12 @@
               "questPoints": 60
             },
             {
+              "name": "Sworn",
+              "tier": 7,
+              "maxPoints": 1730,
+              "questPoints": 60
+            },
+            {
               "name": "Bloodsworn",
               "tier": 8,
               "maxPoints": 0,
@@ -750,6 +780,12 @@
               "name": "Honored",
               "tier": 6,
               "maxPoints": 1320,
+              "questPoints": 60
+            },
+            {
+              "name": "Sworn",
+              "tier": 7,
+              "maxPoints": 1730,
               "questPoints": 60
             },
             {
