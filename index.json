@@ -709,6 +709,12 @@
               "tier": 8,
               "maxPoints": 0,
               "questPoints": 0
+            },
+            {
+              "name": "Allied",
+              "tier": 9,
+              "maxPoints": 0,
+              "questPoints": 0
             }
           ]
         },
@@ -751,6 +757,12 @@
               "tier": 8,
               "maxPoints": 0,
               "questPoints": 0
+            },
+            {
+              "name": "Allied",
+              "tier": 9,
+              "maxPoints": 0,
+              "questPoints": 0
             }
           ]
         },
@@ -791,6 +803,12 @@
             {
               "name": "Bloodsworn",
               "tier": 8,
+              "maxPoints": 0,
+              "questPoints": 0
+            },
+            {
+              "name": "Allied",
+              "tier": 9,
               "maxPoints": 0,
               "questPoints": 0
             }
